@@ -1,0 +1,35 @@
+
+
+<div class="container">
+    <tr>
+        <th>Ajouter un bateau :</th>
+    </tr>
+    <form>
+        <div hidden class="col-sm-2 col-md-2 col-lg-2">
+            <label>Identifiant du bateau</label>
+            <input type="text" [(ngModel)]="newBoat.idBoat" name="idBoat" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom du bateau</label>
+            <input type="text" [(ngModel)]="newBoat.nameBoat" name="nameBoat" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Prix du bateau</label>
+            <input type="number" [(ngModel)]="newBoat.priceBoat" name="priceBoat" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Date de navigation</label>
+            <input type="date" [(ngModel)]="newBoat.dateNavigation" name="dateNavigation" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Description</label>
+            <input type="text" [(ngModel)]="newBoat.description" name="description" class="form-control">
+        </div>        
+        <div class="mt-2">
+            <button type="submit" (click)="addBoat()" class="btn btn-success">Ajouter</button>
+        </div>
+        <div >
+            <h4> {{ message }} </h4>
+        </div>
+    </form>
+</div>

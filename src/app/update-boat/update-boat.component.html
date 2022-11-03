@@ -1,0 +1,31 @@
+<div class="container">
+    <div>
+        <h2>Modifier un bateau :</h2>
+    </div>
+    <form>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Identifiant du bateau</label>
+            <input readonly type="text" [(ngModel)]="currentBoat.idBoat" name="idProduit" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom du bateau</label>
+            <input type="text" [(ngModel)]="currentBoat.nameBoat" name="nomProduit" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Prix du bateau</label>
+            <input type="number" [(ngModel)]="currentBoat.priceBoat" name="prixProduit" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Date de navigation</label>
+            <input type="date" [ngModel]="currentBoat.dateNavigation | date: 'yyyy-MM-dd'" 
+            (ngModelChange)=" currentBoat.dateNavigation= $event" name="dateCreation"  class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Description</label>
+            <input type="text" [(ngModel)]="currentBoat.description" name="description" class="form-control">
+        </div> 
+        <div class="mt-2">
+            <button type="submit" (click)="updateBoat()" class="btn btn-success">Modifer</button>
+        </div>
+    </form>
+</div>

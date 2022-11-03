@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <tr>
+                    <th>Identifiant</th> <th>Nom</th> <th>Prix</th> <th>Date de navigation</th> <th>Description</th>
+                </tr>
+                <tbody *ngFor="let boat of boats">
+                    <tr>
+                        <td>{{boat.idBoat}}</td>
+                        <td>{{boat.nameBoat}}</td>
+                        <td>{{boat.priceBoat}}</td>
+                        <td>{{boat.dateNavigation | date: 'dd/MM/yyyy'}}</td>
+                        <td>{{boat.description}}</td>
+                        <td><a class="btn btn-primary" [routerLink]="['/update-boat', boat.idBoat]"> Modifier</a></td>
+                        <td><a class="btn btn-danger" (click)="deleteBoat(boat)"> Supprimer</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
